@@ -1,0 +1,476 @@
+:root {
+  --background: #fafaf7;
+  --text: #111111;
+  --muted: #6f6f69;
+
+  --stanford: #c33649;
+  --philippines: #a05c35;
+  --neutral: #1ea8e3;
+
+  --stanford-light: #e9d4d7;
+  --philippines-light: #e8d8c9;
+  --neutral-light: #e4e8e8;
+
+  --about-background: var(--neutral-light);
+
+  --dark-background: #171717;
+  --dark-text: #f5f4ef;
+  --dark-muted: #aaa9a2;
+
+  --contact-background: var(--philippines-light);
+}
+
+/* Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+/* Navigation */
+
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  padding: 38px 5vw;
+}
+
+.logo {
+  color: var(--text);
+  font-size: 1.15rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.links {
+  display: flex;
+  gap: 34px;
+}
+
+.links a {
+  color: var(--muted);
+  text-decoration: none;
+
+  transition: color 180ms ease;
+}
+
+.links a:hover {
+  color: var(--text);
+}
+
+/* Hero */
+
+.hero {
+  display: flex;
+  align-items: center;
+
+  min-height: 100vh;
+  padding: 140px 5vw 90px;
+}
+
+.hero-inner {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.location {
+  margin-bottom: 34px;
+
+  color: var(--muted);
+  font-size: 1.25rem;
+}
+
+.hero h1 {
+  max-width: 1000px;
+
+  font-size: clamp(5rem, 10vw, 9rem);
+  font-weight: 650;
+  letter-spacing: -0.05em;
+  line-height: 0.92;
+}
+
+.hero-message {
+  margin-top: 44px;
+
+  color: var(--muted);
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+}
+
+/* Shared section styles */
+
+.section-inner,
+.chapters-intro,
+.chapter {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.section-label {
+  color: var(--muted);
+
+  font-size: 0.85rem;
+  font-weight: 650;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.about-section,
+.contact-section {
+  display: flex;
+  align-items: center;
+
+  min-height: 100vh;
+  padding: 120px 5vw;
+}
+
+.contact-links {
+  display: flex;
+  gap: 40px;
+  margin-top: 52px;
+}
+
+.contact-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.contact-links a:hover {
+  opacity: 0.6;
+}
+
+.about-section h2,
+.contact-section h2,
+.chapters-intro h2 {
+  max-width: 900px;
+  margin-top: 46px;
+
+  font-size: clamp(3.5rem, 7vw, 7rem);
+  font-weight: 650;
+  letter-spacing: -0.055em;
+  line-height: 0.95;
+}
+
+/* About */
+
+.about-section {
+  background: var(--about-background);
+}
+
+.about-text {
+  margin-top: 40px;
+
+  color: var(--muted);
+  font-size: 1.3rem;
+}
+
+/* Chapters */
+
+.chapters-section {
+  padding: 130px 5vw 160px;
+
+  background: var(--dark-background);
+  color: var(--dark-text);
+}
+
+.chapters-intro {
+  margin-bottom: 140px;
+}
+
+.chapters-intro .section-label {
+  color: var(--dark-muted);
+}
+
+.chapter {
+  margin-bottom: 180px;
+}
+
+.chapter:last-child {
+  margin-bottom: 0;
+}
+
+
+/* Chapter colors */
+
+.stanford-chapter .chapter-number,
+.stanford-chapter .chapter-heading h3,
+.stanford-chapter .chapter-location {
+  color: var(--stanford-red);
+}
+
+.soccer-chapter .chapter-number,
+.soccer-chapter .chapter-heading h3,
+.soccer-chapter .chapter-location {
+  color: var(--soccer-orange);
+}
+
+.chapter-heading {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 30px;
+
+  margin-bottom: 56px;
+}
+
+.chapter-number {
+  padding-top: 12px;
+
+  color: var(--dark-muted);
+  font-size: 0.9rem;
+}
+
+.chapter-heading h3 {
+  font-size: clamp(2.8rem, 5vw, 5.5rem);
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.chapter-location {
+  margin-top: 14px;
+
+  color: var(--dark-muted);
+  font-size: 1rem;
+}
+
+
+/* Image layout */
+
+.image-grid {
+  display: grid;
+  gap: 14px;
+  width: 100%;
+}
+
+.chapter-image {
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+
+  background: #292929;
+  border-radius: 10px;
+}
+
+.chapter-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 300ms ease;
+}
+
+.chapter-image:hover img {
+  transform: scale(1.015);
+}
+
+/* Stanford collage */
+
+.chapter:not(:last-child) .image-grid {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.image-large {
+  grid-column: span 7;
+  height: 430px;
+}
+
+.image-portrait {
+  grid-column: span 5;
+  height: 430px;
+}
+
+.image-square {
+  grid-column: span 5;
+  height: 320px;
+}
+
+.image-wide {
+  grid-column: span 7;
+  height: 320px;
+}
+
+
+/* Philippines collage */
+
+.philippines-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-rows: repeat(2, 260px);
+  gap: 14px;
+}
+
+/* Tall image on the left */
+.image-pink {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+}
+
+.image-pink img {
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Wide team image, upper right */
+.image-team {
+  grid-column: 3 / 7;
+  grid-row: 1 / 2;
+}
+
+.image-team img {
+  object-position: center;
+}
+
+/* Stadium image, lower middle */
+.image-stadium {
+  grid-column: 3 / 6;
+  grid-row: 2 / 3;
+}
+
+.image-stadium img {
+  object-fit: cover;
+  object-position: 58% center;
+  transform: scale(1.12);
+}
+
+.image-stadium:hover img {
+  transform: scale(1.15);
+}
+
+/* National-team image, lower right */
+.image-national {
+  grid-column: 6 / 7;
+  grid-row: 2 / 3;
+}
+
+.image-national img {
+  object-fit: cover;
+  object-position: 72% center;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .image-large {
+    height: 380px;
+  }
+
+  .image-square,
+  .image-wide {
+    height: 320px;
+  }
+
+  .image-portrait,
+  .pink-photo {
+    height: 480px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 760px) {
+  nav {
+    padding: 26px 24px;
+  }
+
+  .links {
+    gap: 16px;
+  }
+
+  .links a {
+    font-size: 0.9rem;
+  }
+
+  .hero,
+  .about-section,
+  .contact-section {
+    min-height: 100svh;
+
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .hero h1 {
+    font-size: clamp(4rem, 20vw, 6rem);
+  }
+
+  .chapters-section {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .chapters-intro {
+    margin-bottom: 100px;
+  }
+
+  .chapter {
+    margin-bottom: 120px;
+  }
+
+  .chapter-heading {
+    grid-template-columns: 40px 1fr;
+    gap: 16px;
+  }
+
+  .image-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .image-large,
+  .image-portrait,
+  .image-square,
+  .image-wide,
+  .pink-photo {
+    grid-column: auto;
+    height: 340px;
+  }
+
+  .pink-photo {
+    height: 520px;
+  }
+
+  .stadium-photo img {
+    transform: scale(1.25);
+  }
+
+  .stadium-photo:hover img {
+    transform: scale(1.28);
+  }
+}
